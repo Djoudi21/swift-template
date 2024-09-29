@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct LoginForm: View {
-    @ObservedObject var viewModel: LoginViewModel // Use ObservedObject
+    @EnvironmentObject var viewModel: LoginViewModel // Access the ViewModel from the environment
+    @State var formButtonLabel: String = "Login"
     var body: some View {
         TextField("Username", text: $viewModel.username)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -23,27 +24,19 @@ struct LoginForm: View {
                             .foregroundColor(.red)
                             .padding()
                     }
-                    
-                    Button(action: {
-                        viewModel.login()
-                    }) {
-                        Text("Login")
-                            .frame(maxWidth: .infinity)
-                            .padding()
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
-                    .padding()
+        
+        CustomButton(label: $formButtonLabel) {
+            viewModel.login()
+            if viewModel.isAuthenticated {
+                print("LA")
+            }
+        }
     }
 }
 
 #Preview {
-    // Create an instance of LoginViewModel for the preview
-    let viewModel = LoginViewModel()
-     
-    // You can set some initial values if desired
-    viewModel.username = ""
-    viewModel.password = ""
-    return LoginForm(viewModel: viewModel)
+    let viewModel = LoginViewModel() // Create an instance of LoginViewModel
+
+   LoginForm().environmentObject(viewModel) // Provide the environment object
+
 }

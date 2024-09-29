@@ -15,9 +15,13 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    @StateObject private var viewModel = LoginViewModel()
     var body: some View {
-        LoginScreen()
+        if viewModel.isAuthenticated {
+            TabsView() // Show TabView when authenticated
+        } else {
+            LoginScreen().environmentObject(viewModel)
+        }
     }
 
     private func addItem() {

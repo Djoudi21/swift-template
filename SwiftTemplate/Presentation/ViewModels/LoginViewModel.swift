@@ -2,9 +2,9 @@ import Foundation
 import Combine
 
 class LoginViewModel: ObservableObject {
-    @Published var username: String = ""
-    @Published var password: String = ""
-    @Published var isAuthenticated: Bool = false
+    @Published var username: String = "User"
+    @Published var password: String = "Password"
+    @Published var isAuthenticated: Bool = true
     @Published var errorMessage: String? = nil
     
     private var cancellables = Set<AnyCancellable>()
@@ -19,11 +19,12 @@ class LoginViewModel: ObservableObject {
             return
         }
 
-        // Simulate a login process (In a real app, you could call an API here)
-        if username == "user" && password == "password" {
+        if username == "User" && password == "Password" {
+            print("VALID")
             isAuthenticated = true
             errorMessage = nil
         } else {
+            print("IN VALID")
             isAuthenticated = false
             errorMessage = "Invalid credentials."
         }
