@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct SocialLoginList: View {
+    @ObservedObject var viewModel: LoginViewModel // Use ObservedObject
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+        HStack {
+            SocialLogin(viewModel: viewModel)
+            SocialLogin(viewModel: viewModel)
+        }    }
 }
 
 #Preview {
-    SocialLoginList()
+    let viewModel = LoginViewModel()
+    return SocialLoginList(viewModel: viewModel)
 }

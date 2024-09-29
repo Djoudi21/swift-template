@@ -1,0 +1,22 @@
+disabled_rules: # Disable specific rules
+  - trailing_whitespace
+  - identifier_name
+  - line_length
+
+opt_in_rules: # Some rules are opt-in
+  - empty_count
+
+included: # Paths to include during linting.
+  - Source
+
+excluded: # Paths to ignore during linting.
+  - Carthage
+  - Pods
+  - Generated
+
+# Customize specific rules
+line_length:
+  warning: 120
+  error: 140
+  ignores_comments: true
+  ignores_urls: true

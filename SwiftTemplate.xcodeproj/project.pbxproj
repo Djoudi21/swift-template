@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		84680B592CA8AFEA0007C88E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 84680B582CA8AFE40007C88E /* .swiftlint.yml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		84680ADF2CA868ED0007C88E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,14 +31,30 @@
 		84680AC82CA868EB0007C88E /* SwiftTemplate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTemplate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84680ADE2CA868ED0007C88E /* SwiftTemplateTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTemplateTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84680AE82CA868ED0007C88E /* SwiftTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84680B582CA8AFE40007C88E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		84680ACA2CA868EB0007C88E /* SwiftTemplate */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SwiftTemplate;
-			sourceTree = "<group>";
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		84680B482CA88E940007C88E /* Exceptions for "SwiftTemplate" folder in "SwiftTemplate" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				SwiftTemplate.xcdatamodeld,
+			);
+			target = 84680AC72CA868EB0007C88E /* SwiftTemplate */;
 		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		84680B492CA88E940007C88E /* Exceptions for "SwiftTemplate" folder in "Compile Sources" phase from "SwiftTemplate" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = 84680AC42CA868EB0007C88E /* Sources */;
+			membershipExceptions = (
+				SwiftTemplate.xcdatamodeld,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
 		84680AE12CA868ED0007C88E /* SwiftTemplateTests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftTemplateTests;
@@ -43,6 +63,15 @@
 		84680AEB2CA868ED0007C88E /* SwiftTemplateUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = SwiftTemplateUITests;
+			sourceTree = "<group>";
+		};
+		84680B3F2CA88E940007C88E /* SwiftTemplate */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				84680B482CA88E940007C88E /* Exceptions for "SwiftTemplate" folder in "SwiftTemplate" target */,
+				84680B492CA88E940007C88E /* Exceptions for "SwiftTemplate" folder in "Compile Sources" phase from "SwiftTemplate" target */,
+			);
+			path = SwiftTemplate;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -75,10 +104,11 @@
 		84680ABF2CA868EB0007C88E = {
 			isa = PBXGroup;
 			children = (
-				84680ACA2CA868EB0007C88E /* SwiftTemplate */,
+				84680B582CA8AFE40007C88E /* .swiftlint.yml */,
 				84680AE12CA868ED0007C88E /* SwiftTemplateTests */,
 				84680AEB2CA868ED0007C88E /* SwiftTemplateUITests */,
 				84680AC92CA868EB0007C88E /* Products */,
+				84680B3F2CA88E940007C88E /* SwiftTemplate */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +129,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84680AF22CA868ED0007C88E /* Build configuration list for PBXNativeTarget "SwiftTemplate" */;
 			buildPhases = (
+				84680B572CA8AF6C0007C88E /* ShellScript */,
 				84680AC42CA868EB0007C88E /* Sources */,
 				84680AC52CA868EB0007C88E /* Frameworks */,
 				84680AC62CA868EB0007C88E /* Resources */,
@@ -108,7 +139,7 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				84680ACA2CA868EB0007C88E /* SwiftTemplate */,
+				84680B3F2CA88E940007C88E /* SwiftTemplate */,
 			);
 			name = SwiftTemplate;
 			packageProductDependencies = (
@@ -212,6 +243,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84680B592CA8AFEA0007C88E /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +262,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84680B572CA8AF6C0007C88E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		84680AC42CA868EB0007C88E /* Sources */ = {

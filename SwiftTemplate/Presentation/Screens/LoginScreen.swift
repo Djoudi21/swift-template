@@ -6,36 +6,22 @@ struct LoginScreen: View {
 
     var body: some View {
         VStack {
-            Text("Login")
+            Text("Sign in to Wish Well")
                 .font(.largeTitle)
                 .padding()
+            Text("Welcome back !")
+            Text("PLEASE SIGN UP TO CONTINUE")
+
             
-            TextField("Username", text: $viewModel.username)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
+            SocialLoginList(viewModel: viewModel)
             
-            SecureField("Password", text: $viewModel.password)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .padding()
-            
-            if let errorMessage = viewModel.errorMessage {
-                Text(errorMessage)
-                    .foregroundColor(.red)
-                    .padding()
+            HStack(alignment: .center) {
+                HStack {}.frame(width: 70, height: 1).background(Color.black.opacity(0.3))
+                Text("or").background()
+                HStack {}.frame(width: 70, height: 1).background(Color.black.opacity(0.3))
             }
             
-            Button(action: {
-                viewModel.login()
-            }) {
-                Text("Login")
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .cornerRadius(8)
-            }
-            .padding()
-            
+            LoginForm(viewModel: viewModel) // Pass the ObservedObject here
             Button(action: {
                 isRegisterViewPresented  = true
             }) {

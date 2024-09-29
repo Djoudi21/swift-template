@@ -28,4 +28,9 @@ class LoginViewModel: ObservableObject {
             errorMessage = "Invalid credentials."
         }
     }
+    
+    
+    func loginFromSocialLogin( ) {
+        print("social login")
+    }
 }
